@@ -1,0 +1,127 @@
+body{
+font-family: 'Anton', sans-serif;
+}
+.nave-item
+     {
+       letter-spacing : .2em;
+       font-size : 14px;
+       text-transform :uppercase;
+
+      }
+
+.dropdown-item
+    {
+     letter-spacing : .2em;
+       font-size : 14px;
+       text-transform :uppercase;
+
+     }
+
+.my_footer
+ {
+
+ height:45px;
+ padding-top:15px;
+ font-size:14px;
+ background-color:#a8a8a8;
+ }
+
+
+
+.rowclass{
+  padding-top:15px;
+
+
+}
+.rowclass .mx-auto{
+  color:#000;
+  font-size:12px;
+}
+.imga{
+padding-top:15px;
+}
+.myimg{
+width:250px;
+height:auto;
+}
+.myimg2{
+width:400px;
+height:auto;
+}
+.my-title{
+font-size:16px;
+text-align:center;
+text-transform:uppercase;
+letter-spacing:.2em;
+}
+
+.imgp{
+padding:4px;
+text-align:center;
+}
+.my-bottom-margin{
+margin-bottom:10px;}
+
+.imagecenter{
+text-align:center;
+}
+.pname{
+font-family:Trebuchet MS;
+text-transform:uppercase;
+text-align:center;
+
+}
+.pdsc{
+font-family:Trebuchet MS;
+ background-color:#dbdbdb;
+text-transform:uppercase;
+}
+
+.my_prod_row_class{
+padding-top:15px;
+padding-bottom:20px;
+}
+.my_prod_row_class .mx-auto{
+ color:#000;
+ font-size:12px
+ text-decoration:none;
+ }
+.text-center{
+
+ text-align:center;
+ }
+ .my_prod_title{
+font-family:Trebuchet MS;
+ font-size:16px;
+ padding-top:15px;
+ padding-bottom:10px;
+ letter-spacing:.2em;
+ text-transform:uppercase;
+ }
+
+
+ .mysearch{
+ padding-top:20px
+ }
+ .my_coustom_table{
+ min-width:400px;
+ font-size:14px;
+ }
+
+ .my_custom_thead{
+ font-weight:normal;
+ text-transform:uppercase;
+ letter-spacing:.2em;
+ background-colour:#e6e6e6;
+
+ }
+ .custom_a{
+ text-decoration:none;
+ }
+ .custom_icon{
+ text-decoration:none;
+ color:#868e96 !imposrtant;
+ }
+ .my_custom_button{
+ margin-top:5px;
+ }

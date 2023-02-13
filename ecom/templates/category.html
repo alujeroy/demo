@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+  {% if category %}
+{{ category.description |truncatewords:155}}
+{% else %}
+welcome to alu shop
+{% endif %}
+{% endblock %}
+{% block title %}
+ {% if category %}
+        {{category.name }} --alu store
+
+    {% else %}
+         producs....
+
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+ {% if category %}
+
+      <div>
+          <div class="row rowclass">
+
+          <div class="mx-auto">
+              <p><a href="{% url 'shopapp:allprodcat' %}"> our products </a></p>
+          </div>
+          </div>
+      </div>
+ {% endif %}
+<div class="mx-auto">
+    {% if category %}
+    <img  src="{{category.img.url}}" alt="{{category.name}}">
+</div>
+<br>
+<div>
+    <h1 class="text-center my-title">{{category.name}}</h1>
+    <p class="justify">
+        {{category.description}}
+    </p>
+</div>
+{% else %}
+<div>
+ <img class="myimg1 " src ="{% static 'img/banner.png' %}" alt="our products">
+</div>
+<br>
+<div>
+    <h1 class="text-center my-title">our products collections</h1>
+    <p class="justify">
+        You can click on the ‘item to generate’ column and select the format you want content in.
+
+Below that, you can select if you want an HTML tag in your content or not
+
+After that, you can choose how many paragraphs you want in the ‘how many items to generate’ column.
+
+Then, you can choose the minimum and maximum words you want per sentence.
+
+Later, you can select the minimum and maximum sentences you want per paragraph.
+
+Finally, click on the button ‘generate’
+
+Taddalaa!
+
+You got your Lorem Ipsum content for your website.
+    </p>
+</div>
+ {% endif %}
+<div class="container">
+    <div class="row mx-auto">
+
+        {% for product in products.object_list %}
+
+        <div class="my-bottom-margin col-9 col-sm-12 col-md-4 xol-lg-4 ">
+<div class=" h-100 card shadow-lg p-3 mb-5 bg-white rounded" style="width:23rem;">
+
+                <a href="{{product.get_url}}"><img class="card-img-top myimg imgp" src="{{product.img.url}}" alt="<<product.name}}"></a>
+             <div class="card-body">
+
+                    <h4 class="card-title pname">{{ product.name }}</h4>
+                    <p class="card-subtitle my-title">{{ product.price }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="mx-auto">
+        {% if products.paginator.num_pages > 1 %}
+
+<hr>
+        <div class="text-center">
+            {% for pg in products.paginator.page_range %}
+            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+        {% endfor %}
+        </div>
+            {% endif %}
+
+    </div>
+    <br>
+</div>
+<!--<div class="container">-->
+<!--  <div class="card-columns">-->
+
+<!--    <div class="card">-->
+<!--      <div class="card-header">-->
+<!--        Card Header-->
+<!--      </div>-->
+<!--      <img class="card-img-top" src="https://source.unsplash.com/daily" alt="Card image top">-->
+<!--      <div class="card-body">-->
+<!--        <h3 class="card-title">Each Card body can have a title</h3>-->
+<!--        <h4 class="card-subtitle">And a subtitle</h4>-->
+<!--        <p class="card-text">This is a card body 1</p>-->
+<!--      </div>-->
+{% endblock %}
